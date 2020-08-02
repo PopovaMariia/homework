@@ -5,7 +5,7 @@ def score():
         if combo.count(value) == 3:
             return wheel.get(value) * 10
         elif combo.count(value) == 2 and 'XXX' in combo:
-            return wheel.get(value) * 10
+            return wheel.get(value) * 2
         elif combo.count(value) == 2 and not 'XXX' in combo:
-            return wheel.get(value) * 10
+            return wheel.get(value)
         return 0
