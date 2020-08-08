@@ -9,11 +9,10 @@ def hack_archive(file_name):
     tries = 0
     while True:
         password = generator()
-        if extract_archive(file_to_open, password) == False:
+        if not extract_archive(file_to_open, password):
             if password not in wrong_passwords:
                 wrong_passwords.append(password)
                 tries += 1
-                continue
             continue
         break
     print(f'Archive {file_name} is hacked. Password - {password}')
