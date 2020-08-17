@@ -11,7 +11,11 @@ class Person():
         self.__friends = []
 
     def know(self, new_friend):
+        if new_friend in self.__friends:
+            return
         self.__friends.append(new_friend)
+        new_friend.know(self)
+
 
     def is_known(self, new_friend):
         if new_friend in self.__friends:
@@ -27,5 +31,5 @@ pers_1.know(pers_2)
 pers_2.know(pers_3)
 
 print(pers_1.is_known(pers_2))  # True
-print(pers_2.is_known(pers_3))  # True
+print(pers_2.is_known(pers_1))  # True
 print(pers_1.is_known(pers_3))  # False
