@@ -31,7 +31,7 @@ class ATM:
         return amount
 
     def _validate_currency(self, currency):
-        if currency != 'USD' and currency != 'EUR' and currency != 'UA':
+        if currency not in {'USD', 'EUR', 'UA'}:
             raise ValueError
         return currency
 
